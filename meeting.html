@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="meeting.css" />
+  <title>meeting project</title>
+</head>
+
+
+
+<body>
+  <div class="content">
+  <div class="eventDetails">
+    <h3>Event Details</h3>
+    <p>Meeting Title</p>
+    <input type="text" placeholder="E.g. Fitness Conslultations" />
+    <p hidden>title is a required filed</p>
+    <br />
+    <br />
+
+    <p>Meeting Title</p>
+    <input type="text" placeholder="E.g. We can work together to provide  a customized fitness plan" />
+    <p hidden>Description is a required filed</p>
+
+    <br />
+    <br />
+    <br />
+
+
+     <div class="upload">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+      </svg>
+       
+      <button id="uploadButton">Add Cover Image or Video</button>
+    </div>
+
+     
+    
+  </div>
+
+  <div class="pracing">
+    <h3>Pracing</h3>
+
+    <p>Set the amount you’d like to charge for your meeting.</p>
+
+    <!-- 
+        
+        
+        <div class="input-group mb-3">
+        <button
+          class="btn btn-outline-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Dropdown
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Text input with
+        dropdown button"
+        />
+      </div> -->
+
+    <div class="pracingInput">
+      <div class="valuePracing">
+      <select name="price" id="price">
+        <option value="$">$</option>
+        <option value="£">£</option>
+        <option value="€">€</option>
+        <option value="btc">btc</option>
+      </select>
+    </div>
+      <input type="number" placeholder="Enter amount" />
+      <p hidden>amount must be greater than or equal to 0</p>
+    </div>
+  </div>
+
+
+    <div class="dateRange">
+      <h3>Set a date range for your availability</h3>
+      <p>
+        Fans or clients will only be able to book between the selected range
+        of dates.
+      </p>
+
+      <div class="radioCheck">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+          <label class="form-check-label" for="flexRadioDefault1">
+            Set yourself as available for a booking indefinitely.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Set yourself as available for a booking between a date range.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Set yourself as a available for a booking for a set number of
+            days.
+          </label>
+        </div>
+      </div>
+      <div class="numberOfDates">
+        <input type="number" value="60" />
+        <p># days into the future</p>
+      </div>
+      <hr />
+      <div class="selectDays">
+        <h3>Exclude specific days</h3>
+        <div class="selectDays1">
+        <p>Block off select days from bookings</p>
+        <button>Add A Date</button>
+      </div>
+      </div>
+    </div>
+
+      <br>
+      
+      <div class="weeklyAvailability">
+        <h3>Set your weekly availability</h3>
+        <p>
+          Select the desired duration and your weekly availability for this
+          type of 1:1 meetings.
+        </p>
+        <h4>Duration</h4>
+        <button>15 min</button>
+        <button>30 min</button>
+        <button>45 min</button>
+        <button>60min</button>
+        <br />
+        <input type="number" placeholder="Specific time" />
+        <h2>Select your time zone</h2>
+        <!-- This is dropdown from codepen.io -->
+        <select class="form-control timezone-selector" name="eventsCalCountry" id="eventsCalCountry">
+          <option value="AF">Afghanistan</option>
+          <option value="AL">Albania</option>
+          <option value="DZ">Algeria</option>
+          <option value="AD">Andorra</option>
+          <option value="AO">Angola</option>
+          <option value="AI">Anguilla</option>
+          <option value="AG">Antigua &amp; Barbuda</option>
+          <option value="AR">Argentina</option>
+          <option value="AM">Armenia</option>
+          <option value="AW">Aruba</option>
+          <option value="AU">Australia</option>
+          <option value="AT">Austria</option>
+          <option value="AZ">Azerbaijan</option>
+          <option value="BS">Bahamas</option>
+          <option value="BH">Bahrain</option>
+          <option value="BD">Bangladesh</option>
+          <option value="BB">Barbados</option>
+          <option value="BY">Belarus</option>
+          <option value="BE">Belgium</option>
+          <option value="BZ">Belize</option>
+          <option value="BJ">Benin</option>
+          <option value="BM">Bermuda</option>
+          <option value="BT">Bhutan</option>
+          <option value="BO">Bolivia</option>
+          <option value="BA">Bosnia &amp; Herzegovina</option>
+          <option value="BW">Botswana</option>
+          <option value="BR">Brazil</option>
+          <option value="GB">Britain (UK)</option>
+          <option value="IO">British Indian Ocean Territory</option>
+          <option value="BN">Brunei</option>
+          <option value="BG">Bulgaria</option>
+          <option value="BF">Burkina Faso</option>
+          <option value="BI">Burundi</option>
+          <option value="KH">Cambodia</option>
+          <option value="CM">Cameroon</option>
+          <option value="CA">Canada</option>
+          <option value="CV">Cape Verde</option>
+          <option value="BQ">Caribbean NL</option>
+          <option value="KY">Cayman Islands</option>
+          <option value="CF">Central African Rep.</option>
+          <option value="TD">Chad</option>
+          <option value="CL">Chile</option>
+          <option value="CN">China</option>
+          <option value="CX">Christmas Island</option>
+          <option value="CC">Cocos (Keeling) Islands</option>
+          <option value="CO">Colombia</option>
+          <option value="KM">Comoros</option>
+          <option value="CD">Congo (Dem. Rep.)</option>
+          <option value="CG">Congo (Rep.)</option>
+          <option value="CK">Cook Islands</option>
+          <option value="CR">Costa Rica</option>
+          <option value="HR">Croatia</option>
+          <option value="CU">Cuba</option>
+          <option value="CW">Curacao</option>
+          <option value="CY">Cyprus</option>
+          <option value="CZ">Czech Republic</option>
+          <option value="CI">Côte d'Ivoire</option>
+          <option value="DK">Denmark</option>
+          <option value="DJ">Djibouti</option>
+          <option value="DM">Dominica</option>
+          <option value="DO">Dominican Republic</option>
+          <option value="TL">East Timor</option>
+          <option value="EC">Ecuador</option>
+          <option value="EG">Egypt</option>
+          <option value="SV">El Salvador</option>
+          <option value="GQ">Equatorial Guinea</option>
+          <option value="ER">Eritrea</option>
+          <option value="EE">Estonia</option>
+          <option value="ET">Ethiopia</option>
+          <option value="FK">Falkland Islands</option>
+          <option value="FO">Faroe Islands</option>
+          <option value="FJ">Fiji</option>
+          <option value="FI">Finland</option>
+          <option value="FR">France</option>
+          <option value="GF">French Guiana</option>
+          <option value="PF">French Polynesia</option>
+          <option value="GA">Gabon</option>
+          <option value="GM">Gambia</option>
+          <option value="GE">Georgia</option>
+          <option value="DE">Germany</option>
+          <option value="GH">Ghana</option>
+          <option value="GI">Gibraltar</option>
+          <option value="GR">Greece</option>
+          <option value="GL">Greenland</option>
+          <option value="GD">Grenada</option>
+          <option value="GP">Guadeloupe</option>
+          <option value="GU">Guam</option>
+          <option value="GT">Guatemala</option>
+          <option value="GG">Guernsey</option>
+          <option value="GN">Guinea</option>
+          <option value="GW">Guinea-Bissau</option>
+          <option value="GY">Guyana</option>
+          <option value="HT">Haiti</option>
+          <option value="HN">Honduras</option>
+          <option value="HK">Hong Kong</option>
+          <option value="HU">Hungary</option>
+          <option value="IS">Iceland</option>
+          <option value="IN">India</option>
+          <option value="ID">Indonesia</option>
+          <option value="IR">Iran</option>
+          <option value="IQ">Iraq</option>
+          <option value="IE">Ireland</option>
+          <option value="IM">Isle of Man</option>
+          <option value="IL">Israel</option>
+          <option value="IT">Italy</option>
+          <option value="JM">Jamaica</option>
+          <option value="JP">Japan</option>
+          <option value="JE">Jersey</option>
+          <option value="JO">Jordan</option>
+          <option value="KZ">Kazakhstan</option>
+          <option value="KE">Kenya</option>
+          <option value="KI">Kiribati</option>
+          <option value="KP">Korea (North)</option>
+          <option value="KR">Korea (South)</option>
+          <option value="KW">Kuwait</option>
+          <option value="KG">Kyrgyzstan</option>
+          <option value="LA">Laos</option>
+          <option value="LV">Latvia</option>
+          <option value="LB">Lebanon</option>
+          <option value="LS">Lesotho</option>
+          <option value="LR">Liberia</option>
+          <option value="LY">Libya</option>
+          <option value="LI">Liechtenstein</option>
+          <option value="LT">Lithuania</option>
+          <option value="LU">Luxembourg</option>
+          <option value="MO">Macau</option>
+          <option value="MK">Macedonia</option>
+          <option value="MG">Madagascar</option>
+          <option value="MW">Malawi</option>
+          <option value="MY">Malaysia</option>
+          <option value="MV">Maldives</option>
+          <option value="ML">Mali</option>
+          <option value="MT">Malta</option>
+          <option value="MH">Marshall Islands</option>
+          <option value="MQ">Martinique</option>
+          <option value="MR">Mauritania</option>
+          <option value="MU">Mauritius</option>
+          <option value="YT">Mayotte</option>
+          <option value="MX">Mexico</option>
+          <option value="FM">Micronesia</option>
+          <option value="MD">Moldova</option>
+          <option value="MC">Monaco</option>
+          <option value="MN">Mongolia</option>
+          <option value="ME">Montenegro</option>
+          <option value="MS">Montserrat</option>
+          <option value="MA">Morocco</option>
+          <option value="MZ">Mozambique</option>
+          <option value="MM">Myanmar (Burma)</option>
+          <option value="NA">Namibia</option>
+          <option value="NR">Nauru</option>
+          <option value="NP">Nepal</option>
+          <option value="NL">Netherlands</option>
+          <option value="NC">New Caledonia</option>
+          <option value="NZ">New Zealand</option>
+          <option value="NI">Nicaragua</option>
+          <option value="NE">Niger</option>
+          <option value="NG">Nigeria</option>
+          <option value="NU">Niue</option>
+          <option value="NF">Norfolk Island</option>
+          <option value="MP">Northern Mariana Islands</option>
+          <option value="NO">Norway</option>
+          <option value="OM">Oman</option>
+          <option value="PK">Pakistan</option>
+          <option value="PW">Palau</option>
+          <option value="PS">Palestine</option>
+          <option value="PA">Panama</option>
+          <option value="PG">Papua New Guinea</option>
+          <option value="PY">Paraguay</option>
+          <option value="PE">Peru</option>
+          <option value="PH">Philippines</option>
+          <option value="PN">Pitcairn</option>
+          <option value="PL">Poland</option>
+          <option value="PT">Portugal</option>
+          <option value="PR">Puerto Rico</option>
+          <option value="QA">Qatar</option>
+          <option value="RO">Romania</option>
+          <option value="RU">Russia</option>
+          <option value="RW">Rwanda</option>
+          <option value="RE">Réunion</option>
+          <option value="AS">Samoa (American)</option>
+          <option value="WS">Samoa (western)</option>
+          <option value="SM">San Marino</option>
+          <option value="ST">Sao Tome &amp; Principe</option>
+          <option value="SA">Saudi Arabia</option>
+          <option value="SN">Senegal</option>
+          <option value="RS">Serbia</option>
+          <option value="SC">Seychelles</option>
+          <option value="SL">Sierra Leone</option>
+          <option value="SG">Singapore</option>
+          <option value="SK">Slovakia</option>
+          <option value="SI">Slovenia</option>
+          <option value="SB">Solomon Islands</option>
+          <option value="SO">Somalia</option>
+          <option value="ZA">South Africa</option>
+          <option value="SS">South Sudan</option>
+          <option value="ES">Spain</option>
+          <option value="LK">Sri Lanka</option>
+          <option value="BL">St Barthelemy</option>
+          <option value="SH">St Helena</option>
+          <option value="KN">St Kitts &amp; Nevis</option>
+          <option value="LC">St Lucia</option>
+          <option value="SX">St Maarten (Dutch)</option>
+          <option value="MF">St Martin (French)</option>
+          <option value="PM">St Pierre &amp; Miquelon</option>
+          <option value="VC">St Vincent</option>
+          <option value="SD">Sudan</option>
+          <option value="SR">Suriname</option>
+          <option value="SJ">Svalbard &amp; Jan Mayen</option>
+          <option value="SZ">Swaziland</option>
+          <option value="SE">Sweden</option>
+          <option value="CH">Switzerland</option>
+          <option value="SY">Syria</option>
+          <option value="TW">Taiwan</option>
+          <option value="TJ">Tajikistan</option>
+          <option value="TZ">Tanzania</option>
+          <option value="TH">Thailand</option>
+          <option value="TG">Togo</option>
+          <option value="TK">Tokelau</option>
+          <option value="TO">Tonga</option>
+          <option value="TT">Trinidad &amp; Tobago</option>
+          <option value="TN">Tunisia</option>
+          <option value="TR">Turkey</option>
+          <option value="TM">Turkmenistan</option>
+          <option value="TC">Turks &amp; Caicos Is</option>
+          <option value="TV">Tuvalu</option>
+          <option value="UM">US minor outlying islands</option>
+          <option value="UG">Uganda</option>
+          <option value="UA">Ukraine</option>
+          <option value="AE">United Arab Emirates</option>
+          <option value="US">United States</option>
+          <option value="UY">Uruguay</option>
+          <option value="UZ">Uzbekistan</option>
+          <option value="VU">Vanuatu</option>
+          <option value="VA">Vatican City</option>
+          <option value="VE">Venezuela</option>
+          <option value="VN">Vietnam</option>
+          <option value="VG">Virgin Islands (UK)</option>
+          <option value="VI">Virgin Islands (US)</option>
+          <option value="WF">Wallis &amp; Futuna</option>
+          <option value="EH">Western Sahara</option>
+          <option value="YE">Yemen</option>
+          <option value="ZM">Zambia</option>
+          <option value="ZW">Zimbabwe</option>
+          <option value="AX">Åland Islands</option>
+          <option value="America/New_York">(UTC-05:00) Eastern</option>
+          <option value="America/Chicago">(UTC-06:00) Central</option>
+          <option value="America/Denver">(UTC-07:00) Mountain</option>
+          <option value="America/Phoenix">(UTC-07:00) Mountain - AZ</option>
+          <option value="America/Los_Angeles">(UTC-08:00) Pacific</option>
+          <option value="America/Anchorage">(UTC-09:00) Alaskan</option>
+          <option value="Pacific/Honolulu">(UTC-10:00) Hawaiian</option>
+        </select>
+      </div>
+      <br><br>
+
+
+
+      <div class="Days">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+          <label class="form-check-label" for="flexSwitchCheckChecked">Monday</label>
+          <select name="Monday" id="Monday">
+            <option value="00:00">00:00am</option>
+            <option value="00:00">00:30am</option>
+            <option value="00:00">1:00am</option>
+            <option value="00:00">02:00am</option>
+          </select>
+        </div>
+        <br />
+
+        <div class="Days">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+            <label class="form-check-label" for="flexSwitchCheckChecked">Tuesday</label>
+            <select name="Monday" id="Monday">
+              <option value="00:00">00:00am</option>
+              <option value="00:00">00:30am</option>
+              <option value="00:00">1:00am</option>
+              <option value="00:00">02:00am</option>
+            </select>
+          </div>
+          <br />
+
+          <div class="Days">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+              <label class="form-check-label" for="flexSwitchCheckChecked">Wednesday</label>
+              <select name="Monday" id="Monday">
+                <option value="00:00">00:00am</option>
+                <option value="00:00">00:30am</option>
+                <option value="00:00">1:00am</option>
+                <option value="00:00">02:00am</option>
+              </select>
+            </div>
+            <br />
+
+            <div class="Days">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                <label class="form-check-label" for="flexSwitchCheckChecked">Thursday</label>
+                <select name="Monday" id="Monday">
+                  <option value="00:00">00:00am</option>
+                  <option value="00:00">00:30am</option>
+                  <option value="00:00">1:00am</option>
+                  <option value="00:00">02:00am</option>
+                </select>
+              </div>
+              <br>
+              <div class="Days">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                  <label class="form-check-label" for="flexSwitchCheckChecked">Friday</label>
+                  <select name="Monday" id="Monday">
+                    <option value="00:00">00:00am</option>
+                    <option value="00:00">00:30am</option>
+                    <option value="00:00">1:00am</option>
+                    <option value="00:00">02:00am</option>
+                  </select>
+                </div>
+                <br>
+                <div class="Days">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Saturday</label>
+                    <select name="Monday" id="Monday">
+                      <option value="00:00">00:00am</option>
+                      <option value="00:00">00:30am</option>
+                      <option value="00:00">1:00am</option>
+                      <option value="00:00">02:00am</option>
+                    </select>
+                  </div>
+                  <br>
+                  <div class="Days">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                        checked />
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Sunday</label>
+                      <select name="Monday" id="Monday">
+                        <option value="00:00">00:00am</option>
+                        <option value="00:00">00:30am</option>
+                        <option value="00:00">1:00am</option>
+                        <option value="00:00">02:00am</option>
+                      </select>
+
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="availability">
+                      <h3>Rules of availability</h3>
+                      <p>Add optional rules for your availability, including the frequency of available start times and
+                        minimum notice you’d like to require before a meeting.</p>
+                      <br>
+                      <p>Start Time Increments</p>
+
+                      <select name="StartTime" id="StartTime">
+                        <option value="5">5min</option>
+                        <option value="10">10 min</option>
+                        <option value="15">15min</option>
+                        <option value="20">20min</option>
+                        <option value="30">30min</option>
+                      </select>
+                      <br><br>
+
+                      <p>Invitees can't schedule within</p>
+                      
+                        <input type="number" value="60">
+                        
+                        <select name="typeTime" id="typeTime">
+                          <option value="Minutes">Minutes</option>
+                          <option value="hours">hours</option>
+                          <option value="days">Days</option>
+                        </select>
+                        <p> before the event start time.</p>
+                        
+                          
+                        
+                        
+
+                          
+
+
+                        
+                        
+                        <br>
+                        <hr><br>
+
+
+                        <div class="location">
+                          <h3>location</h3>
+                          <p>Choose how attendess will join your meeting</p>
+
+                          <br><br>
+
+                          
+
+                          <div class="meetLocations">
+
+
+                          <div class="googleMeet">
+
+                            <div class="iconBackground">
+
+                            <img src="./meet.png" alt="goole meet icon"height="24px" width="24px">
+                          </div>
+                            <h3>Google meet</h3>
+                            <p>A Zoom link will be generated for you.</p>
+                            <input type="radio">
+
+                          </div>
+
+                          <div class="zoomCall">
+                            <div class="iconBackground">
+                            <img src="./zoom.png" alt="zoom icon"height="24px" width="24px">
+                          </div>
+                            <h3>Zoom</h3>
+                            <p>A Zoom link will be generated for you.</p>
+                            <input type="radio">
+
+
+                          </div>
+
+                          <div class="phoneCall"> 
+                            <div class="iconBackground"> 
+                            <img src="./telephone.png" alt="call icon" height="24px" width="24px">
+                          </div>
+                          <h3>Phone</h3>
+                          <p>Your customer will be required to provide their phone number at checkout.</p>
+                          <input type="radio">
+                          <br>
+                        </div>
+                      </div>
+                        
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+                    </select>
+
+
+
+
+
+
+
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br />
+        </div>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+          crossorigin="anonymous"></script>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
